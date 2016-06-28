@@ -2,6 +2,7 @@ package com.tandem6.springedu.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 import com.tandem6.springedu.domain.Customer;
@@ -14,7 +15,7 @@ import com.tandem6.springedu.domain.Customer;
  * 사용법은 CrudRepository<도메인객체, 도메인객체의 키 형태>
  */
 
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
     // select * from Customer wherer lastname = :lastname
     List<Customer> findByLastName(String lastName);
 }
