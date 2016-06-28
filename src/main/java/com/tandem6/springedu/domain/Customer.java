@@ -5,6 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/*
+ * ORM - DB TABLE - JAVA Object 간 매칭
+ * CRUD를 해당 객체를 이용해서 수행하게 됨 -> 단순한 작업 수행시에는 별도의 쿼리가 필요하지 않음.
+ * 조회나 DB를 Access할 때는 Repository를 구현해서 수행함.
+ * 
+ * 여기서는 DB TABLE에 대한 모델링 만을 수행함.  
+ *  
+ */
+
 @Entity
 public class Customer {
 
@@ -21,6 +30,8 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    
+    
     @Override
     public String toString() {
         return String.format(

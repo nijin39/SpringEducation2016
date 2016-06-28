@@ -25,9 +25,9 @@ public class EducationApplication {
 	}
 	
 	@Bean
-public ServletRegistrationBean h2servletRegistration() {
-    ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
-    registration.addUrlMappings("/console/*");
+    public ServletRegistrationBean h2servletRegistration() {
+        ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
+        registration.addUrlMappings("/console/*");
     return registration;
 }
 
@@ -36,6 +36,7 @@ public ServletRegistrationBean h2servletRegistration() {
 	public CommandLineRunner demo(CustomerRepository repository) {
 		return (args) -> {
 			// save a couple of customers
+			// insert into Custeomer(firstName, Lastname) values ('Jack','Bauer');
 			repository.save(new Customer("Jack", "Bauer"));
 			repository.save(new Customer("Chloe", "O'Brian"));
 			repository.save(new Customer("Kim", "Bauer"));
@@ -45,12 +46,15 @@ public ServletRegistrationBean h2servletRegistration() {
 			// fetch all customers
 			log.info("Customers found with findAll():");
 			log.info("-------------------------------");
+			// repository.findAll()
+			// select * from Custeomer;
 			for (Customer customer : repository.findAll()) {
 				log.info(customer.toString());
 			}
             log.info("");
 
 			// fetch an individual customer by ID
+			// select * from Customer where id = '1L'
 			Customer customer = repository.findOne(1L);
 			log.info("Customer found with findOne(1L):");
 			log.info("--------------------------------");
