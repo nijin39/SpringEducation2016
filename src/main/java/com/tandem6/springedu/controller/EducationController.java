@@ -23,6 +23,10 @@ public class EducationController {
         return "say HI";
     } 
     
+    // Controller : 주소 받아주고 서비스를 처리해서 결과를 리턴해준다.
+    // Service : 실제 비지니스를 수행한다.
+    // Repository : DB Access를 수행한다.
+    // Controller -> Service -> Repository(Mybatis):M -> DB
     @RequestMapping("/customers")
     public List<Customer> getCustomerList(){
         return educationService.listAllCustomer();
