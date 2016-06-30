@@ -3,11 +3,13 @@ package com.tandem6.springedu.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tandem6.springedu.domain.Customer;
 import com.tandem6.springedu.service.EducationService;
+import com.tandem6.springedu.service.impl.EducationServiceImpl;
 
 
 @RestController
@@ -30,5 +32,10 @@ public class EducationController {
     @RequestMapping("/customers")
     public List<Customer> getCustomerList(){
         return educationService.listAllCustomer();
+    }
+    
+    @RequestMapping("/customers/{id}")
+    public Customer getCustomerById(@PathVariable Long id){
+    	return educationService.getCustomerById(id);
     }
 }
