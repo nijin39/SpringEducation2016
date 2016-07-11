@@ -20,7 +20,18 @@ public class EducationServiceImpl implements EducationService {
         return customerRepository.findAll();
     }
 
-	@Override
+    @Override
+    public Customer createCusteomer(String firstName, String lastName) {
+        //Valid check is null firstName, lastName
+        Customer customer = new Customer("KIM","JONGIL");
+
+        //IF occurs errors below exception
+        customerRepository.save(customer);
+
+        return customer;
+    }
+
+    @Override
 	public Customer getCustomerById(Long id) {
 		return customerRepository.findOne(id);
 	}

@@ -39,7 +39,7 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    protected Customer() {}
+    public Customer() {}
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;

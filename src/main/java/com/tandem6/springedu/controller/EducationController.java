@@ -20,7 +20,7 @@ public class EducationController {
     
     // /로 들어온 요청에 대한 처리
     // Say HI를 Http Response에 실어서 내보낸다. 
-    @RequestMapping("/")
+    @RequestMapping("/rest/")
     public String sayHello(){
         return "say HI";
     } 
@@ -37,5 +37,11 @@ public class EducationController {
     @RequestMapping("/customers/{id}")
     public Customer getCustomerById(@PathVariable Long id){
     	return educationService.getCustomerById(id);
+    }
+
+    @RequestMapping("/customers/{firstName}/{lastName}")
+    public List<Customer> createCusutomer(@PathVariable String firstName, @PathVariable String lastName){
+        educationService.createCusteomer(firstName, lastName);
+        return educationService.listAllCustomer();
     }
 }
