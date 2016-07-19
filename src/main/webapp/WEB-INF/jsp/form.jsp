@@ -6,7 +6,7 @@
 <html lang="en">
 
 <body>
-	<form action="action_page.php">
+	<form action="/save" method="POST">
   <fieldset>
     <legend>Personal information:</legend>
     First name:<br>
