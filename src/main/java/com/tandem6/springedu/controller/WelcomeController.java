@@ -40,14 +40,11 @@ public class WelcomeController {
         mav.addObject("name",name);
         return mav;
     }
-<<<<<<< HEAD
     
     @RequestMapping("/form")
     public String form(){
         return "form";
     }
-=======
->>>>>>> 26032bedddde487751c4fe0f19f2d21495bd6a57
 
     @RequestMapping("/foo")
     public String foo(Map<String, Object> model) {
